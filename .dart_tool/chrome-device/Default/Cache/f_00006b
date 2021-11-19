@@ -1,0 +1,869 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/testflutter/Services/auth.dart', 'packages/flutter/src/widgets/form.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/single_child_scroll_view.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/material/text_form_field.dart', 'packages/flutter/src/material/input_border.dart', 'packages/flutter/src/material/outlined_button.dart', 'packages/flutter/src/material/colors.dart'], (function load__packages__testflutter__pageAuth__inscription_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__testflutter__Services__auth$46dart, packages__flutter__src__widgets__form$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__single_child_scroll_view$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__material__text_form_field$46dart, packages__flutter__src__material__input_border$46dart, packages__flutter__src__material__outlined_button$46dart, packages__flutter__src__material__colors$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const auth = packages__testflutter__Services__auth$46dart.Services__auth;
+  const form = packages__flutter__src__widgets__form$46dart.src__widgets__form;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const input_decorator = packages__flutter__src__material__icon_button$46dart.src__material__input_decorator;
+  const text_button = packages__flutter__src__material__icon_button$46dart.src__material__text_button;
+  const single_child_scroll_view = packages__flutter__src__widgets__single_child_scroll_view$46dart.src__widgets__single_child_scroll_view;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const text_form_field = packages__flutter__src__material__text_form_field$46dart.src__material__text_form_field;
+  const input_border = packages__flutter__src__material__input_border$46dart.src__material__input_border;
+  const outlined_button = packages__flutter__src__material__outlined_button$46dart.src__material__outlined_button;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  var inscription = Object.create(dart.library);
+  var $isEmpty = dartx.isEmpty;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    FormStateL: () => (T.FormStateL = dart.constFn(dart.legacy(form.FormState)))(),
+    GlobalKeyOfFormStateL: () => (T.GlobalKeyOfFormStateL = dart.constFn(framework.GlobalKey$(T.FormStateL())))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    StringLToStringL: () => (T.StringLToStringL = dart.constFn(dart.fnType(T.StringL(), [T.StringL()])))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    FutureOfNull: () => (T.FutureOfNull = dart.constFn(async.Future$(core.Null)))(),
+    FutureLOfNull: () => (T.FutureLOfNull = dart.constFn(dart.legacy(T.FutureOfNull())))(),
+    VoidToFutureLOfNull: () => (T.VoidToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [])))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 29,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 21,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 36,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6], T._LocationL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 35,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 22,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([C[9] || CT.C9], T._LocationL());
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[8] || CT.C8,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 38,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 15,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 15,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 15,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14], T._LocationL());
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 22,
+        [_Location_line]: 50,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([C[17] || CT.C17], T._LocationL());
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 50,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 15,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 15,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 15,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 51,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 22,
+        [_Location_line]: 61,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.constList([C[25] || CT.C25], T._LocationL());
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 61,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 15,
+        [_Location_line]: 63,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 15,
+        [_Location_line]: 68,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 15,
+        [_Location_line]: 71,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.constList([C[28] || CT.C28, C[29] || CT.C29, C[30] || CT.C30], T._LocationL());
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 62,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 22,
+        [_Location_line]: 73,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33], T._LocationL());
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 73,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 17,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 17,
+        [_Location_line]: 80,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 17,
+        [_Location_line]: 84,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "obscureText",
+        [_Location_column]: 17,
+        [_Location_line]: 85,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37, C[38] || CT.C38, C[39] || CT.C39], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 74,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 22,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.constList([C[42] || CT.C42], T._LocationL());
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[41] || CT.C41,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 87,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 17,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 17,
+        [_Location_line]: 94,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 17,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "obscureText",
+        [_Location_column]: 17,
+        [_Location_line]: 101,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.constList([C[45] || CT.C45, C[46] || CT.C46, C[47] || CT.C47, C[48] || CT.C48], T._LocationL());
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[44] || CT.C44,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 88,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 22,
+        [_Location_line]: 102,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51], T._LocationL());
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 102,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 29,
+        [_Location_line]: 106,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.constList([C[54] || CT.C54], T._LocationL());
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[53] || CT.C53,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 106,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 17,
+        [_Location_line]: 104,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 106,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 107,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.constList([C[57] || CT.C57, C[58] || CT.C58, C[59] || CT.C59], T._LocationL());
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[56] || CT.C56,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 103,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 22,
+        [_Location_line]: 120,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.constList([C[62] || CT.C62], T._LocationL());
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[61] || CT.C61,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 120,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 29,
+        [_Location_line]: 127,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.constList([C[65] || CT.C65], T._LocationL());
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[64] || CT.C64,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 127,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 122,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 17,
+        [_Location_line]: 125,
+        [_Location_file]: null
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 127,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.constList([C[68] || CT.C68, C[69] || CT.C69, C[70] || CT.C70], T._LocationL());
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[67] || CT.C67,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 121,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 25,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C72() {
+      return C[72] = dart.constList([C[73] || CT.C73], T._LocationL());
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[72] || CT.C72,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 34,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "key",
+        [_Location_column]: 11,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C75() {
+      return C[75] = dart.constList([C[76] || CT.C76, C[77] || CT.C77], T._LocationL());
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[75] || CT.C75,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 31,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 9,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C79() {
+      return C[79] = dart.constList([C[80] || CT.C80, C[81] || CT.C81], T._LocationL());
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[79] || CT.C79,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 28,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C83() {
+      return C[83] = dart.constList([C[84] || CT.C84], T._LocationL());
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[83] || CT.C83,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 9,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.constList([C[87] || CT.C87], T._LocationL());
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[86] || CT.C86,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/pageAuth/inscription.dart"
+      });
+    }
+  }, false);
+  var C = Array(88).fill(void 0);
+  var I = ["package:testflutter/pageAuth/inscription.dart"];
+  var transfertPage$ = dart.privateName(inscription, "Inscription.transfertPage");
+  inscription.Inscription = class Inscription extends framework.StatefulWidget {
+    get transfertPage() {
+      return this[transfertPage$];
+    }
+    set transfertPage(value) {
+      super.transfertPage = value;
+    }
+    createState() {
+      return new inscription._InscriptionState.new();
+    }
+  };
+  (inscription.Inscription.new = function(opts) {
+    let transfertPage = opts && 'transfertPage' in opts ? opts.transfertPage : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[transfertPage$] = transfertPage;
+    inscription.Inscription.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = inscription.Inscription.prototype;
+  dart.addTypeTests(inscription.Inscription);
+  dart.addTypeCaches(inscription.Inscription);
+  dart.setMethodSignature(inscription.Inscription, () => ({
+    __proto__: dart.getMethods(inscription.Inscription.__proto__),
+    createState: dart.fnType(dart.legacy(inscription._InscriptionState), [])
+  }));
+  dart.setLibraryUri(inscription.Inscription, I[0]);
+  dart.setFieldSignature(inscription.Inscription, () => ({
+    __proto__: dart.getFields(inscription.Inscription.__proto__),
+    transfertPage: dart.finalFieldType(dart.legacy(core.Function))
+  }));
+  var _auth = dart.privateName(inscription, "_auth");
+  var _formKey = dart.privateName(inscription, "_formKey");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  inscription._InscriptionState = class _InscriptionState extends framework.State$(dart.legacy(inscription.Inscription)) {
+    build(context) {
+      return new scaffold.Scaffold.new({body: new single_child_scroll_view.SingleChildScrollView.new({child: new container.Container.new({padding: new edge_insets.EdgeInsets.symmetric({vertical: 50.0, horizontal: 30.0}), child: new form.Form.new({key: this[_formKey], child: new basic.Column.new({children: T.JSArrayOfWidgetL().of([new basic.Center.new({child: new text.Text.new("Bienvenue : créez votre compte !", {style: theme.Theme.of(context).textTheme.headline5, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[7] || CT.C7}), new text_form_field.TextFormField.new({decoration: new input_decorator.InputDecoration.new({labelText: "Nom", border: new input_border.OutlineInputBorder.new()}), validator: dart.fn(val => val[$isEmpty] ? "Entrez votre nom" : null, T.StringLToStringL()), onChanged: dart.fn(val => this.nom = val, T.StringLToStringL()), $creationLocationd_0dea112b090073317d4: C[10] || CT.C10}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[15] || CT.C15}), new text_form_field.TextFormField.new({decoration: new input_decorator.InputDecoration.new({labelText: "Prénom", border: new input_border.OutlineInputBorder.new()}), validator: dart.fn(val => val[$isEmpty] ? "Entrez votre prenom" : null, T.StringLToStringL()), onChanged: dart.fn(val => this.prenom = val, T.StringLToStringL()), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[23] || CT.C23}), new text_form_field.TextFormField.new({decoration: new input_decorator.InputDecoration.new({labelText: "Adresse mail", border: new input_border.OutlineInputBorder.new()}), validator: dart.fn(val => val[$isEmpty] ? "Entrez votre adresse mail" : null, T.StringLToStringL()), onChanged: dart.fn(val => this.mail = val, T.StringLToStringL()), $creationLocationd_0dea112b090073317d4: C[26] || CT.C26}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), new text_form_field.TextFormField.new({decoration: new input_decorator.InputDecoration.new({labelText: "Mot de passe", border: new input_border.OutlineInputBorder.new()}), validator: dart.fn(val => val.length < 6 ? "Entrez un mot de passe avec plus de 6 caractères" : null, T.StringLToStringL()), onChanged: dart.fn(val => this.motDePass = val, T.StringLToStringL()), obscureText: true, $creationLocationd_0dea112b090073317d4: C[34] || CT.C34}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[40] || CT.C40}), new text_form_field.TextFormField.new({decoration: new input_decorator.InputDecoration.new({labelText: "Confirmation mot de passe", border: new input_border.OutlineInputBorder.new()}), onChanged: dart.fn(val => this.confMDP = val, T.StringLToStringL()), validator: dart.fn(val => this.confMDP != this.motDePass ? "Mot de passe ne correspond pas" : null, T.StringLToStringL()), obscureText: true, $creationLocationd_0dea112b090073317d4: C[43] || CT.C43}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[49] || CT.C49}), new outlined_button.OutlinedButton.new({style: text_button.TextButton.styleFrom({backgroundColor: colors.Colors.grey._get(600), primary: colors.Colors.white70}), child: new text.Text.new("S'enregistrer", {$creationLocationd_0dea112b090073317d4: C[52] || CT.C52}), onPressed: dart.fn(() => async.async(core.Null, (function*() {
+                      if (dart.test(this[_formKey].currentState.validate())) {
+                        let result = (yield this[_auth].registerWithEmailAndPassword(this.mail, this.motDePass));
+                        if (result == null) {
+                          this.setState(dart.fn(() => {
+                            this.error = "Vous êtes déjà enregister : cliquer sur \"Avez-vous déjà un compte ?\"";
+                          }, T.VoidToNull()));
+                        }
+                      }
+                    }).bind(this)), T.VoidToFutureLOfNull()), $creationLocationd_0dea112b090073317d4: C[55] || CT.C55}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[60] || CT.C60}), new outlined_button.OutlinedButton.new({onPressed: dart.fn(() => {
+                      dart.dsend(this.widget, 'transfertPage', []);
+                    }, T.VoidToNull()), style: text_button.TextButton.styleFrom({backgroundColor: colors.Colors.grey._get(600), primary: colors.Colors.white70}), child: new text.Text.new("Avez-vous déjà un compte ?", {$creationLocationd_0dea112b090073317d4: C[63] || CT.C63}), $creationLocationd_0dea112b090073317d4: C[66] || CT.C66})]), $creationLocationd_0dea112b090073317d4: C[71] || CT.C71}), $creationLocationd_0dea112b090073317d4: C[74] || CT.C74}), $creationLocationd_0dea112b090073317d4: C[78] || CT.C78}), $creationLocationd_0dea112b090073317d4: C[82] || CT.C82}), $creationLocationd_0dea112b090073317d4: C[85] || CT.C85});
+    }
+  };
+  (inscription._InscriptionState.new = function() {
+    this.nom = "";
+    this.prenom = "";
+    this.mail = "";
+    this.motDePass = "";
+    this.confMDP = "";
+    this.error = "";
+    this[_auth] = new auth.AuthService.new();
+    this[_formKey] = T.GlobalKeyOfFormStateL().new();
+    inscription._InscriptionState.__proto__.new.call(this);
+    ;
+  }).prototype = inscription._InscriptionState.prototype;
+  dart.addTypeTests(inscription._InscriptionState);
+  dart.addTypeCaches(inscription._InscriptionState);
+  dart.setMethodSignature(inscription._InscriptionState, () => ({
+    __proto__: dart.getMethods(inscription._InscriptionState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(inscription._InscriptionState, I[0]);
+  dart.setFieldSignature(inscription._InscriptionState, () => ({
+    __proto__: dart.getFields(inscription._InscriptionState.__proto__),
+    nom: dart.fieldType(dart.legacy(core.String)),
+    prenom: dart.fieldType(dart.legacy(core.String)),
+    mail: dart.fieldType(dart.legacy(core.String)),
+    motDePass: dart.fieldType(dart.legacy(core.String)),
+    confMDP: dart.fieldType(dart.legacy(core.String)),
+    error: dart.fieldType(dart.legacy(core.String)),
+    [_auth]: dart.finalFieldType(dart.legacy(auth.AuthService)),
+    [_formKey]: dart.finalFieldType(dart.legacy(framework.GlobalKey$(dart.legacy(form.FormState))))
+  }));
+  dart.trackLibraries("packages/testflutter/pageAuth/inscription.dart", {
+    "package:testflutter/pageAuth/inscription.dart": inscription
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["inscription.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAMiB;;;;;;;AAGoB;IAAmB;;;QAFpC;;;AAAlB;;EAAiC;;;;;;;;;;;;;;;;;;;;UAiBP;AACxB,YAAO,kCACG,+DACD,sCACe,gDAAoB,kBAAkB,eAEnD,wBACA,uBAEE,gCAAyB,yBAC9B,6BACW,kBAAK,4CACK,AAAY,AAAU,eAAnB,OAAO,yIAC/B,gCAAiB,+DAEjB,mDACc,oDACC,eACH,wDAGC,QAAC,OAAQ,AAAI,GAAD,aAAW,qBAAqB,wCAE5C,QAAC,OAAQ,WAAM,GAAG,oFAE/B,gCAAiB,iEACjB,mDACc,oDACC,kBACH,wDAGC,QAAC,OAAQ,AAAI,GAAD,aAAW,wBAAwB,wCAE/C,QAAC,OAAQ,cAAS,GAAG,oFAElC,gCAAiB,iEACjB,mDACc,oDACC,wBACH,wDAGC,QAAC,OACR,AAAI,GAAD,aAAW,8BAA8B,wCAErC,QAAC,OAAQ,YAAO,GAAG,oFAEhC,gCAAiB,iEACjB,mDACgB,oDACC,wBACH,wDAGC,QAAC,OAAQ,AAAI,AAAO,GAAR,UAAU,IAC3B,qDACA,wCAEK,QAAC,OAAQ,iBAAY,GAAG,sCACtB,iEAEjB,gCAAiB,iEACjB,mDACgB,oDACC,qCACH,wDAGC,QAAC,OAAQ,eAAU,GAAG,oCAEtB,QAAC,OAAQ,AAAQ,gBAAG,iBACzB,mCACA,0CAGO,iEACjB,gCAAiB,iEACjB,+CACsB,mDACU,AAAI,wBAAC,eAAsB,gCAChD,kBAAK,wFACD;AACT,oCAAI,AAAS,AAAa;AAChB,sCAAS,MAAM,AAAM,yCACzB,WAAM;AACV,4BAAI,AAAO,MAAD;AAIN,0BAHF,cAAS;AAEmE,4BAD1E,aACI;;;;oBAIX,qGAEL,gCAAiB,iEACjB,mDACe;AACa,sBAAF,WAApB;+CAEgB,mDACU,AAAI,wBAAC,eAAsB,gCAChD,kBAAK;IAK1B;;;IAtHO,WAAM;IACN,cAAS;IACT,YAAO;IACP,iBAAY;IACZ,eAAU;IACV,aAAQ;IAEG,cAAQ;IAEpB,iBAAW;;;EA8GnB","file":"../../../../../../../../packages/testflutter/pageAuth/inscription.dart.lib.js"}');
+  // Exports:
+  return {
+    pageAuth__inscription: inscription
+  };
+}));
+
+//# sourceMappingURL=inscription.dart.lib.js.map

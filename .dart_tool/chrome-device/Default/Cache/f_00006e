@@ -1,0 +1,1673 @@
+define(['dart_sdk', 'packages/testflutter/Screens/commandes.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/page.dart', 'packages/cloud_firestore/cloud_firestore.dart', 'packages/flutter/src/widgets/async.dart', 'packages/firebase_auth/firebase_auth.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/material/material_state.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/testflutter/Screens/AjoutArticles.dart'], (function load__packages__testflutter__Screens__detailArticle_dart(dart_sdk, packages__testflutter__Screens__commandes$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__page$46dart, packages__cloud_firestore__cloud_firestore$46dart, packages__flutter__src__widgets__async$46dart, packages__firebase_auth__firebase_auth$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__material__material_state$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__testflutter__Screens__AjoutArticles$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const async = dart_sdk.async;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const database = packages__testflutter__Screens__commandes$46dart.Services__database;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const text_button = packages__flutter__src__material__icon_button$46dart.src__material__text_button;
+  const dialog = packages__flutter__src__material__icon_button$46dart.src__material__dialog;
+  const button_style = packages__flutter__src__material__icon_button$46dart.src__material__button_style;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const page = packages__flutter__src__material__page$46dart.src__material__page;
+  const cloud_firestore = packages__cloud_firestore__cloud_firestore$46dart.cloud_firestore;
+  const async$ = packages__flutter__src__widgets__async$46dart.src__widgets__async;
+  const firebase_auth = packages__firebase_auth__firebase_auth$46dart.firebase_auth;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const material_state = packages__flutter__src__material__material_state$46dart.src__material__material_state;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const AjoutArticles = packages__testflutter__Screens__AjoutArticles$46dart.Screens__AjoutArticles;
+  var detailArticle = Object.create(dart.library);
+  var articles = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    ArticlesL: () => (T.ArticlesL = dart.constFn(dart.legacy(articles.Articles)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLToArticlesL: () => (T.BuildContextLToArticlesL = dart.constFn(dart.fnType(T.ArticlesL(), [T.BuildContextL()])))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    AlertDialogL: () => (T.AlertDialogL = dart.constFn(dart.legacy(dialog.AlertDialog)))(),
+    BuildContextLToAlertDialogL: () => (T.BuildContextLToAlertDialogL = dart.constFn(dart.fnType(T.AlertDialogL(), [T.BuildContextL()])))(),
+    TextL: () => (T.TextL = dart.constFn(dart.legacy(text.Text)))(),
+    dynamicToTextL: () => (T.dynamicToTextL = dart.constFn(dart.fnType(T.TextL(), [dart.dynamic])))(),
+    FutureOfNull: () => (T.FutureOfNull = dart.constFn(async.Future$(core.Null)))(),
+    FutureLOfNull: () => (T.FutureLOfNull = dart.constFn(dart.legacy(T.FutureOfNull())))(),
+    VoidToFutureLOfNull: () => (T.VoidToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [])))(),
+    ColorL: () => (T.ColorL = dart.constFn(dart.legacy(ui.Color)))(),
+    AjoutArticlesL: () => (T.AjoutArticlesL = dart.constFn(dart.legacy(AjoutArticles.AjoutArticles)))(),
+    BuildContextLToAjoutArticlesL: () => (T.BuildContextLToAjoutArticlesL = dart.constFn(dart.fnType(T.AjoutArticlesL(), [T.BuildContextL()])))(),
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    DetailArticleL: () => (T.DetailArticleL = dart.constFn(dart.legacy(detailArticle.DetailArticle)))(),
+    BuildContextLToDetailArticleL: () => (T.BuildContextLToDetailArticleL = dart.constFn(dart.fnType(T.DetailArticleL(), [T.BuildContextL()])))(),
+    TextButtonL: () => (T.TextButtonL = dart.constFn(dart.legacy(text_button.TextButton)))(),
+    dynamicToTextButtonL: () => (T.dynamicToTextButtonL = dart.constFn(dart.fnType(T.TextButtonL(), [dart.dynamic])))(),
+    ListOfWidget: () => (T.ListOfWidget = dart.constFn(core.List$(framework.Widget)))(),
+    AsyncSnapshotL: () => (T.AsyncSnapshotL = dart.constFn(dart.legacy(async$.AsyncSnapshot)))(),
+    BuildContextLAndAsyncSnapshotLToWidgetL: () => (T.BuildContextLAndAsyncSnapshotLToWidgetL = dart.constFn(dart.fnType(T.WidgetL(), [T.BuildContextL(), T.AsyncSnapshotL()])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 47,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 25,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 11,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 11,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5, C[6] || CT.C6], T._LocationL());
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 23,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 20,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 19,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([C[9] || CT.C9, C[10] || CT.C10], T._LocationL());
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[8] || CT.C8,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 29,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([C[13] || CT.C13], T._LocationL());
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[12] || CT.C12,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 34,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 24,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.constList([C[16] || CT.C16], T._LocationL());
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[15] || CT.C15,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 35,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 20,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 31,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.constList([C[19] || CT.C19, C[20] || CT.C20], T._LocationL());
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[18] || CT.C18,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 36,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 27,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23], T._LocationL());
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 24,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26], T._LocationL());
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 38,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 20,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 29,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.constList([C[29] || CT.C29, C[30] || CT.C30], T._LocationL());
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[28] || CT.C28,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 28,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33], T._LocationL());
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 24,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 41,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 20,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 19,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39, C[40] || CT.C40], T._LocationL());
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 42,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 34,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.constList([C[43] || CT.C43], T._LocationL());
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[42] || CT.C42,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 44,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 24,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.constList([C[46] || CT.C46], T._LocationL());
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[45] || CT.C45,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 32,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.constList([C[49] || CT.C49], T._LocationL());
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[48] || CT.C48,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 45,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.constList([C[53] || CT.C53], T._LocationL());
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[52] || CT.C52,
+        [_Location_name]: null,
+        [_Location_column]: 40,
+        [_Location_line]: 56,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget__location]: C[51] || CT.C51,
+        [Widget_key]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
+        [Text_data]: "Annuler"
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 27,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.constList([C[56] || CT.C56, C[57] || CT.C57], T._LocationL());
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[55] || CT.C55,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 54,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C59() {
+      return C[59] = dart.constList([], T._LocationL());
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[59] || CT.C59,
+        [_Location_name]: null,
+        [_Location_column]: 57,
+        [_Location_line]: 64,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 45,
+        [_Location_line]: 67,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.constList([C[63] || CT.C63], T._LocationL());
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[62] || CT.C62,
+        [_Location_name]: null,
+        [_Location_column]: 40,
+        [_Location_line]: 67,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget__location]: C[61] || CT.C61,
+        [Widget_key]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
+        [Text_data]: "Confirmer"
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 27,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 67,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.constList([C[66] || CT.C66, C[67] || CT.C67], T._LocationL());
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[65] || CT.C65,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 58,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 23,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actions",
+        [_Location_column]: 23,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.constList([C[70] || CT.C70, C[71] || CT.C71], T._LocationL());
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[69] || CT.C69,
+        [_Location_name]: null,
+        [_Location_column]: 56,
+        [_Location_line]: 50,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 19,
+        [_Location_line]: 74,
+        [_Location_file]: null
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 19,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.constList([C[74] || CT.C74, C[75] || CT.C75], T._LocationL());
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[73] || CT.C73,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 73,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 73,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 17,
+        [_Location_line]: 77,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C[77] = dart.constList([C[78] || CT.C78, C[79] || CT.C79, C[80] || CT.C80], T._LocationL());
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[77] || CT.C77,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 46,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C[82] = dart.constList([C[83] || CT.C83], T._LocationL());
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[82] || CT.C82,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C85() {
+      return C[85] = dart.constList([C[86] || CT.C86], T._LocationL());
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[85] || CT.C85,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 29,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 11,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C88() {
+      return C[88] = dart.constList([C[89] || CT.C89, C[90] || CT.C90], T._LocationL());
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[88] || CT.C88,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 9,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 9,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C[92] = dart.constList([C[93] || CT.C93, C[94] || CT.C94], T._LocationL());
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[92] || CT.C92,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 22,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/detailArticle.dart"
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 39,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C[96] = dart.constList([C[97] || CT.C97], T._LocationL());
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[96] || CT.C96,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 28,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 25,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C99() {
+      return C[99] = dart.constList([C[100] || CT.C100], T._LocationL());
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[99] || CT.C99,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C103() {
+      return C[103] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 31,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C102() {
+      return C[102] = dart.constList([C[103] || CT.C103], T._LocationL());
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[102] || CT.C102,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 38,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C106() {
+      return C[106] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 40,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C105() {
+      return C[105] = dart.constList([C[106] || CT.C106], T._LocationL());
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[105] || CT.C105,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C109() {
+      return C[109] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 35,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C108() {
+      return C[108] = dart.constList([C[109] || CT.C109], T._LocationL());
+    },
+    get C107() {
+      return C[107] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[108] || CT.C108,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 46,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C112() {
+      return C[112] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 23,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C113() {
+      return C[113] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 23,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C114() {
+      return C[114] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "label",
+        [_Location_column]: 23,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C115() {
+      return C[115] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 23,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C111() {
+      return C[111] = dart.constList([C[112] || CT.C112, C[113] || CT.C113, C[114] || CT.C114, C[115] || CT.C115], T._LocationL());
+    },
+    get C110() {
+      return C[110] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[111] || CT.C111,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 41,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C118() {
+      return C[118] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 19,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C119() {
+      return C[119] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 19,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C120() {
+      return C[120] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actions",
+        [_Location_column]: 19,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C117() {
+      return C[117] = dart.constList([C[118] || CT.C118, C[119] || CT.C119, C[120] || CT.C120], T._LocationL());
+    },
+    get C116() {
+      return C[116] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[117] || CT.C117,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C121() {
+      return C[121] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 70
+      });
+    },
+    get C122() {
+      return C[122] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[59] || CT.C59,
+        [_Location_name]: null,
+        [_Location_column]: 57,
+        [_Location_line]: 63,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C125() {
+      return C[125] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 39,
+        [_Location_line]: 66,
+        [_Location_file]: null
+      });
+    },
+    get C124() {
+      return C[124] = dart.constList([C[125] || CT.C125], T._LocationL());
+    },
+    get C123() {
+      return C[123] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[124] || CT.C124,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 66,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C128() {
+      return C[128] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 66,
+        [_Location_file]: null
+      });
+    },
+    get C127() {
+      return C[127] = dart.constList([C[66] || CT.C66, C[128] || CT.C128], T._LocationL());
+    },
+    get C126() {
+      return C[126] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[127] || CT.C127,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 58,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C131() {
+      return C[131] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 27,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C130() {
+      return C[130] = dart.constList([C[131] || CT.C131], T._LocationL());
+    },
+    get C129() {
+      return C[129] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[130] || CT.C130,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 57,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C134() {
+      return C[134] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "idart",
+        [_Location_column]: 51,
+        [_Location_line]: 80,
+        [_Location_file]: null
+      });
+    },
+    get C135() {
+      return C[135] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "nomart",
+        [_Location_column]: 51,
+        [_Location_line]: 81,
+        [_Location_file]: null
+      });
+    },
+    get C136() {
+      return C[136] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "prix",
+        [_Location_column]: 51,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C137() {
+      return C[137] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "stock",
+        [_Location_column]: 51,
+        [_Location_line]: 85,
+        [_Location_file]: null
+      });
+    },
+    get C138() {
+      return C[138] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fournisseur",
+        [_Location_column]: 51,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C133() {
+      return C[133] = dart.constList([C[134] || CT.C134, C[135] || CT.C135, C[136] || CT.C136, C[137] || CT.C137, C[138] || CT.C138], T._LocationL());
+    },
+    get C132() {
+      return C[132] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[133] || CT.C133,
+        [_Location_name]: null,
+        [_Location_column]: 67,
+        [_Location_line]: 79,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C141() {
+      return C[141] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 61,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C140() {
+      return C[140] = dart.constList([C[141] || CT.C141], T._LocationL());
+    },
+    get C139() {
+      return C[139] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[140] || CT.C140,
+        [_Location_name]: null,
+        [_Location_column]: 42,
+        [_Location_line]: 91,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C144() {
+      return C[144] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 35,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C145() {
+      return C[145] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 35,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C143() {
+      return C[143] = dart.constList([C[144] || CT.C144, C[145] || CT.C145], T._LocationL());
+    },
+    get C142() {
+      return C[142] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[143] || CT.C143,
+        [_Location_name]: null,
+        [_Location_column]: 38,
+        [_Location_line]: 74,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C148() {
+      return C[148] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 29,
+        [_Location_line]: 73,
+        [_Location_file]: null
+      });
+    },
+    get C147() {
+      return C[147] = dart.constList([C[148] || CT.C148], T._LocationL());
+    },
+    get C146() {
+      return C[146] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[147] || CT.C147,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 72,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C151() {
+      return C[151] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 27,
+        [_Location_line]: 71,
+        [_Location_file]: null
+      });
+    },
+    get C152() {
+      return C[152] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 72,
+        [_Location_file]: null
+      });
+    },
+    get C150() {
+      return C[150] = dart.constList([C[151] || CT.C151, C[152] || CT.C152], T._LocationL());
+    },
+    get C149() {
+      return C[149] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[150] || CT.C150,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 70,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C155() {
+      return C[155] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 25,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C156() {
+      return C[156] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 25,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C154() {
+      return C[154] = dart.constList([C[155] || CT.C155, C[156] || CT.C156], T._LocationL());
+    },
+    get C153() {
+      return C[153] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[154] || CT.C154,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 54,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C159() {
+      return C[159] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C158() {
+      return C[158] = dart.constList([C[159] || CT.C159], T._LocationL());
+    },
+    get C157() {
+      return C[157] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[158] || CT.C158,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 53,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C162() {
+      return C[162] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 17,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C163() {
+      return C[163] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 17,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C161() {
+      return C[161] = dart.constList([C[162] || CT.C162, C[163] || CT.C163], T._LocationL());
+    },
+    get C160() {
+      return C[160] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[161] || CT.C161,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 36,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C166() {
+      return C[166] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 23,
+        [_Location_line]: 97,
+        [_Location_file]: null
+      });
+    },
+    get C165() {
+      return C[165] = dart.constList([C[166] || CT.C166], T._LocationL());
+    },
+    get C164() {
+      return C[164] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[165] || CT.C165,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 97,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    },
+    get C169() {
+      return C[169] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "future",
+        [_Location_column]: 9,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C170() {
+      return C[170] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 9,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C168() {
+      return C[168] = dart.constList([C[169] || CT.C169, C[170] || CT.C170], T._LocationL());
+    },
+    get C167() {
+      return C[167] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[168] || CT.C168,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/articles.dart"
+      });
+    }
+  }, false);
+  var C = Array(171).fill(void 0);
+  var I = [
+    "package:testflutter/Screens/detailArticle.dart",
+    "package:testflutter/Screens/articles.dart"
+  ];
+  var idart$ = dart.privateName(detailArticle, "DetailArticle.idart");
+  var nomart$ = dart.privateName(detailArticle, "DetailArticle.nomart");
+  var prix$ = dart.privateName(detailArticle, "DetailArticle.prix");
+  var stock$ = dart.privateName(detailArticle, "DetailArticle.stock");
+  var fournisseur$ = dart.privateName(detailArticle, "DetailArticle.fournisseur");
+  var db = dart.privateName(detailArticle, "DetailArticle.db");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var Text_textHeightBehavior = dart.privateName(text, "Text.textHeightBehavior");
+  var Text_textWidthBasis = dart.privateName(text, "Text.textWidthBasis");
+  var Text_semanticsLabel = dart.privateName(text, "Text.semanticsLabel");
+  var Text_maxLines = dart.privateName(text, "Text.maxLines");
+  var Text_textScaleFactor = dart.privateName(text, "Text.textScaleFactor");
+  var Text_overflow = dart.privateName(text, "Text.overflow");
+  var Text_softWrap = dart.privateName(text, "Text.softWrap");
+  var Text_locale = dart.privateName(text, "Text.locale");
+  var Text_textDirection = dart.privateName(text, "Text.textDirection");
+  var Text_textAlign = dart.privateName(text, "Text.textAlign");
+  var Text_strutStyle = dart.privateName(text, "Text.strutStyle");
+  var Text_style = dart.privateName(text, "Text.style");
+  var Text_textSpan = dart.privateName(text, "Text.textSpan");
+  var Text_data = dart.privateName(text, "Text.data");
+  detailArticle.DetailArticle = class DetailArticle extends framework.StatelessWidget {
+    get idart() {
+      return this[idart$];
+    }
+    set idart(value) {
+      this[idart$] = value;
+    }
+    get nomart() {
+      return this[nomart$];
+    }
+    set nomart(value) {
+      this[nomart$] = value;
+    }
+    get prix() {
+      return this[prix$];
+    }
+    set prix(value) {
+      this[prix$] = value;
+    }
+    get stock() {
+      return this[stock$];
+    }
+    set stock(value) {
+      this[stock$] = value;
+    }
+    get fournisseur() {
+      return this[fournisseur$];
+    }
+    set fournisseur(value) {
+      this[fournisseur$] = value;
+    }
+    get db() {
+      return this[db];
+    }
+    set db(value) {
+      this[db] = value;
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({backgroundColor: colors.Colors.grey, title: new text.Text.new("Détail article " + dart.str(this.nomart), {$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3}), body: new container.Container.new({padding: new edge_insets.EdgeInsets.symmetric({vertical: 70.0, horizontal: 70.0}), child: new basic.Center.new({child: new basic.Column.new({children: T.JSArrayOfWidgetL().of([new text.Text.new("Nom Article", {style: new text_style.TextStyle.new({fontWeight: ui.FontWeight.bold}), $creationLocationd_0dea112b090073317d4: C[7] || CT.C7}), new text.Text.new(dart.str(this.nomart), {$creationLocationd_0dea112b090073317d4: C[11] || CT.C11}), new basic.SizedBox.new({height: 30.0, $creationLocationd_0dea112b090073317d4: C[14] || CT.C14}), new text.Text.new("Prix HT", {style: new text_style.TextStyle.new({fontWeight: ui.FontWeight.bold}), $creationLocationd_0dea112b090073317d4: C[17] || CT.C17}), new text.Text.new(dart.str(this.prix), {$creationLocationd_0dea112b090073317d4: C[21] || CT.C21}), new basic.SizedBox.new({height: 30.0, $creationLocationd_0dea112b090073317d4: C[24] || CT.C24}), new text.Text.new("Stock", {style: new text_style.TextStyle.new({fontWeight: ui.FontWeight.bold}), $creationLocationd_0dea112b090073317d4: C[27] || CT.C27}), new text.Text.new(dart.str(this.stock), {$creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), new basic.SizedBox.new({height: 30.0, $creationLocationd_0dea112b090073317d4: C[34] || CT.C34}), new text.Text.new("Fournisseur", {style: new text_style.TextStyle.new({fontWeight: ui.FontWeight.bold}), $creationLocationd_0dea112b090073317d4: C[37] || CT.C37}), new text.Text.new(dart.str(this.fournisseur), {$creationLocationd_0dea112b090073317d4: C[41] || CT.C41}), new basic.SizedBox.new({height: 30.0, $creationLocationd_0dea112b090073317d4: C[44] || CT.C44}), new text_button.TextButton.new({onPressed: dart.fn(() => {
+                    dialog.showDialog(T.StringL(), {context: context, builder: dart.fn(context => new dialog.AlertDialog.new({title: new text.Text.new("Etes vous sur de vouloir supprimer Article  ?", {$creationLocationd_0dea112b090073317d4: C[47] || CT.C47}), actions: T.JSArrayOfWidgetL().of([new text_button.TextButton.new({onPressed: dart.fn(() => navigator.Navigator.pop(T.StringL(), context, "Annuler"), T.VoidTovoid()), child: C[50] || CT.C50, $creationLocationd_0dea112b090073317d4: C[54] || CT.C54}), new text_button.TextButton.new({onPressed: dart.fn(() => {
+                              this.db.deleteArticle(dart.str(this.idart));
+                              navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new articles.Articles.new({$creationLocationd_0dea112b090073317d4: C[58] || CT.C58}), T.BuildContextLToArticlesL())}));
+                            }, T.VoidToNull()), child: C[60] || CT.C60, $creationLocationd_0dea112b090073317d4: C[64] || CT.C64})]), $creationLocationd_0dea112b090073317d4: C[68] || CT.C68}), T.BuildContextLToAlertDialogL())});
+                  }, T.VoidToNull()), child: new text.Text.new("Supprimer", {style: new text_style.TextStyle.new({color: colors.Colors.white, fontSize: 15.0}), $creationLocationd_0dea112b090073317d4: C[72] || CT.C72}), style: text_button.TextButton.styleFrom({backgroundColor: colors.Colors.grey}), $creationLocationd_0dea112b090073317d4: C[76] || CT.C76})]), $creationLocationd_0dea112b090073317d4: C[81] || CT.C81}), $creationLocationd_0dea112b090073317d4: C[84] || CT.C84}), $creationLocationd_0dea112b090073317d4: C[87] || CT.C87}), $creationLocationd_0dea112b090073317d4: C[91] || CT.C91});
+    }
+  };
+  (detailArticle.DetailArticle.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let idart = opts && 'idart' in opts ? opts.idart : null;
+    let nomart = opts && 'nomart' in opts ? opts.nomart : null;
+    let prix = opts && 'prix' in opts ? opts.prix : null;
+    let stock = opts && 'stock' in opts ? opts.stock : null;
+    let fournisseur = opts && 'fournisseur' in opts ? opts.fournisseur : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[nomart$] = "";
+    this[fournisseur$] = "";
+    this[db] = new database.DataBaseService.new();
+    this[idart$] = idart;
+    this[nomart$] = nomart;
+    this[prix$] = prix;
+    this[stock$] = stock;
+    this[fournisseur$] = fournisseur;
+    detailArticle.DetailArticle.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = detailArticle.DetailArticle.prototype;
+  dart.addTypeTests(detailArticle.DetailArticle);
+  dart.addTypeCaches(detailArticle.DetailArticle);
+  dart.setMethodSignature(detailArticle.DetailArticle, () => ({
+    __proto__: dart.getMethods(detailArticle.DetailArticle.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(detailArticle.DetailArticle, I[0]);
+  dart.setFieldSignature(detailArticle.DetailArticle, () => ({
+    __proto__: dart.getFields(detailArticle.DetailArticle.__proto__),
+    idart: dart.fieldType(dart.legacy(core.String)),
+    nomart: dart.fieldType(dart.legacy(core.String)),
+    prix: dart.fieldType(dart.legacy(core.double)),
+    stock: dart.fieldType(dart.legacy(core.int)),
+    fournisseur: dart.fieldType(dart.legacy(core.String)),
+    db: dart.fieldType(dart.legacy(database.DataBaseService))
+  }));
+  articles.Articles = class Articles extends framework.StatefulWidget {
+    createState() {
+      return new articles._ArticlesState.new();
+    }
+  };
+  (articles.Articles.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    articles.Articles.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = articles.Articles.prototype;
+  dart.addTypeTests(articles.Articles);
+  dart.addTypeCaches(articles.Articles);
+  dart.setMethodSignature(articles.Articles, () => ({
+    __proto__: dart.getMethods(articles.Articles.__proto__),
+    createState: dart.fnType(dart.legacy(articles._ArticlesState), [])
+  }));
+  dart.setLibraryUri(articles.Articles, I[1]);
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  articles._ArticlesState = class _ArticlesState extends framework.State$(dart.legacy(articles.Articles)) {
+    articles() {
+      return async.async(dart.dynamic, (function* articles() {
+        return yield this.db.getArticle();
+      }).bind(this));
+    }
+    build(context) {
+      return new async$.FutureBuilder.new({future: this.articles(), builder: dart.fn((context, snapshot) => {
+          dart.dsend(dart.dsend(dart.dload(snapshot.data, 'docs'), 'map', [dart.fn(article => new text.Text.new(core.String.as(dart.dsend(dart.dsend(article, 'data', []), '_get', ["Nom article "])), {$creationLocationd_0dea112b090073317d4: C[95] || CT.C95}), T.dynamicToTextL())]), 'toList', []);
+          if (dart.test(snapshot.hasError)) {
+            return new text.Text.new("Something went wrong", {$creationLocationd_0dea112b090073317d4: C[98] || CT.C98});
+          }
+          if (snapshot.connectionState == async$.ConnectionState.done) {
+            core.print(snapshot);
+            return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("GESTCOM Articles", {$creationLocationd_0dea112b090073317d4: C[101] || CT.C101}), backgroundColor: colors.Colors.grey, actions: T.JSArrayOfWidgetL().of([new text_button._TextButtonWithIcon.new({onPressed: dart.fn(() => async.async(core.Null, function*() {
+                      yield firebase_auth.FirebaseAuth.instance.signOut();
+                    }), T.VoidToFutureLOfNull()), icon: new icon.Icon.new(icons.Icons.person, {$creationLocationd_0dea112b090073317d4: C[104] || CT.C104}), label: new text.Text.new("Déconnexion", {$creationLocationd_0dea112b090073317d4: C[107] || CT.C107}), style: new button_style.ButtonStyle.new({backgroundColor: material_state.MaterialStateProperty.all(T.ColorL(), colors.Colors.blueGrey)}), $creationLocationd_0dea112b090073317d4: C[110] || CT.C110})]), $creationLocationd_0dea112b090073317d4: C[116] || CT.C116}), body: new basic.Center.new({child: new scroll_view.ListView.new({padding: C[121] || CT.C121, children: T.JSArrayOfWidgetL().of([new basic.Row.new({children: T.JSArrayOfWidgetL().of([new text_button.TextButton.new({onPressed: dart.fn(() => {
+                            navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new AjoutArticles.AjoutArticles.new({$creationLocationd_0dea112b090073317d4: C[122] || CT.C122}), T.BuildContextLToAjoutArticlesL())}));
+                          }, T.VoidToNull()), child: new text.Text.new("Ajouter", {$creationLocationd_0dea112b090073317d4: C[123] || CT.C123}), $creationLocationd_0dea112b090073317d4: C[126] || CT.C126})]), $creationLocationd_0dea112b090073317d4: C[129] || CT.C129}), new container.Container.new({padding: new edge_insets.EdgeInsets.symmetric({vertical: 5.0}), child: new basic.Column.new({children: T.ListOfWidget().as(dart.dsend(dart.dgsend(dart.dload(snapshot.data, 'docs'), [T.WidgetL()], 'map', [dart.fn(article => new text_button.TextButton.new({onPressed: dart.fn(() => {
+                              navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new detailArticle.DetailArticle.new({idart: T.StringL().as(dart.dload(article, 'id')), nomart: T.StringL().as(dart.dsend(dart.dsend(article, 'data', []), '_get', ["Nom article "])), prix: T.doubleL().as(dart.dsend(dart.dsend(article, 'data', []), '_get', ["Prix HT"])), stock: T.intL().as(dart.dsend(dart.dsend(article, 'data', []), '_get', ["Stock"])), fournisseur: T.StringL().as(dart.dsend(dart.dsend(article, 'data', []), '_get', ["Fournisseur"])), $creationLocationd_0dea112b090073317d4: C[132] || CT.C132}), T.BuildContextLToDetailArticleL())}));
+                            }, T.VoidToNull()), child: new text.Text.new(core.String.as(dart.dsend(dart.dsend(article, 'data', []), '_get', ["Nom article "])), {$creationLocationd_0dea112b090073317d4: C[139] || CT.C139}), $creationLocationd_0dea112b090073317d4: C[142] || CT.C142}), T.dynamicToTextButtonL())]), 'toList', [])), $creationLocationd_0dea112b090073317d4: C[146] || CT.C146}), $creationLocationd_0dea112b090073317d4: C[149] || CT.C149})]), $creationLocationd_0dea112b090073317d4: C[153] || CT.C153}), $creationLocationd_0dea112b090073317d4: C[157] || CT.C157}), $creationLocationd_0dea112b090073317d4: C[160] || CT.C160});
+          }
+          return new text.Text.new("Chargement...", {$creationLocationd_0dea112b090073317d4: C[164] || CT.C164});
+        }, T.BuildContextLAndAsyncSnapshotLToWidgetL()), $creationLocationd_0dea112b090073317d4: C[167] || CT.C167});
+    }
+  };
+  (articles._ArticlesState.new = function() {
+    this.firestore = cloud_firestore.FirebaseFirestore.instance;
+    this.db = new database.DataBaseService.new();
+    articles._ArticlesState.__proto__.new.call(this);
+    ;
+  }).prototype = articles._ArticlesState.prototype;
+  dart.addTypeTests(articles._ArticlesState);
+  dart.addTypeCaches(articles._ArticlesState);
+  dart.setMethodSignature(articles._ArticlesState, () => ({
+    __proto__: dart.getMethods(articles._ArticlesState.__proto__),
+    articles: dart.fnType(dart.legacy(async.Future), []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(articles._ArticlesState, I[1]);
+  dart.setFieldSignature(articles._ArticlesState, () => ({
+    __proto__: dart.getFields(articles._ArticlesState.__proto__),
+    firestore: dart.finalFieldType(dart.legacy(cloud_firestore.FirebaseFirestore)),
+    db: dart.fieldType(dart.legacy(database.DataBaseService))
+  }));
+  dart.trackLibraries("packages/testflutter/Screens/detailArticle.dart", {
+    "package:testflutter/Screens/detailArticle.dart": detailArticle,
+    "package:testflutter/Screens/articles.dart": articles
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["detailArticle.dart","articles.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAKS;;;;;;IACA;;;;;;IACA;;;;;;IACH;;;;;;IACG;;;;;;IASS;;;;;;UAEU;AACxB,YAAO,oCACK,yCACkB,2BACjB,kBAAK,AAAwB,6BAAP,uIAEzB,sCACgB,gDAAoB,kBAAkB,eACnD,6BACI,gCACC,yBACR,kBAAK,uBACM,0CAAiC,+EAC5C,kBAAc,SAAP,0EACP,gCAAiB,iEACjB,kBAAK,mBAAkB,0CAAiC,iFACxD,kBAAY,SAAL,wEACP,gCAAiB,iEACjB,kBAAK,iBAAgB,0CAAiC,iFACtD,kBAAa,SAAN,yEACP,gCAAiB,iEACjB,kBAAK,uBACM,0CAAiC,iFAC5C,kBAAmB,SAAZ,+EACP,gCAAiB,iEACjB,2CACa;AAwBR,oBAvBD,yCACW,OAAO,WACP,QAAc,WAAY,mCAE7B,kBAAK,sHACQ,yBACf,2CACa,cAAgB,qCAAI,OAAO,EAAE,gHAG1C,2CACa;AACiB,8BAA1B,AAAG,sBAAsB,SAAN;AAKb,8BAJI,uCACN,OAAO,EACP,yCACW,QAAC,WAAY;;6CASjC,kBACL,qBACO,qCAAwB,+BAAiB,0EAEhC,mDACQ;IAMxC;;;QAxES;QACU;QACV;QACA;QACA;QACA;;IAVF,gBAAS;IAGT,qBAAc;IASL,WAAK;IANF;IACV;IACA;IACA;IACA;AANT;;EAMsB;;;;;;;;;;;;;;;;;;;ACPU;IAAgB;;;;;;EAClD;;;;;;;;;;;;;;AAOiB;AACb,cAAO,OAAM,AAAG;MAClB;;UAG0B;AACxB,YAAO,uCACK,0BACC,SAAC,SAAS;AAGN,UAAR,WAFgB,WAAL,WAAd,AAAS,QAAD,wBAAe,QAAC,WACf,iCAAmB,WAAN,WAAR,OAAO,wBAAQ;AAG7B,wBAAI,AAAS,QAAD;AACV,kBAAO,mBAAK;;AAEd,cAAI,AAAS,AAAgB,QAAjB,oBAAoC;AAC/B,YAAf,WAAM,QAAQ;AACd,kBAAO,oCACK,+BACC,kBAAK,mGACY,6BACP,yBACJ,oDACE;AAC4B,sBAArC,MAAmB,AAAS;oBAC7B,oCACK,kBAAW,yFACV,kBAAK,oFACL,mDAEuB,qDAAW,6JAIzC,6BACK,oEAEO,yBACZ,6BAAc,yBACZ,2CACa;AAKR,4BAJS,uCACR,OAAO,EACP,yCACa,QAAC,WAAY;qDAGvB,kBAAK,qMAIhB,sCACwB,gDAAoB,cACjC,oDAoBF,WAnB0B,YAAL,WAAd,AAAS,QAAD,uCAAuB,QAAC,WACjC,2CACQ;AAcM,8BAbL,uCACN,OAAO,EACP,yCACa,QAAC,WAAY,2DACD,WAAR,OAAO,iCAEH,WAAN,WADG,OAAO,wBACH,wCAEM,WAAN,WAAR,OAAO,wBAAQ,iCAED,WAAN,WAAR,OAAO,wBAAQ,wCAER,WAAN,WADQ,OAAO,wBACR;uDAGrB,iCAAmB,WAAN,WAAR,OAAO,wBAAQ;;AAMnD,gBAAO,mBAAK;;IAEpB;;;IArFwB,iBAA8B;IAEtC,UAAK;;;EAoFvB","file":"../../../../../../../../packages/testflutter/Screens/detailArticle.dart.lib.js"}');
+  // Exports:
+  return {
+    Screens__detailArticle: detailArticle,
+    Screens__articles: articles
+  };
+}));
+
+//# sourceMappingURL=detailArticle.dart.lib.js.map

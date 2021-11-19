@@ -1,0 +1,735 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/cloud_firestore/cloud_firestore.dart', 'packages/flutter/src/widgets/async.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/material/colors.dart', 'packages/firebase_auth/firebase_auth.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/material/material_state.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/flutter/src/painting/edge_insets.dart'], (function load__packages__testflutter__Screens__commandes_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__cloud_firestore__cloud_firestore$46dart, packages__flutter__src__widgets__async$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__material__colors$46dart, packages__firebase_auth__firebase_auth$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__material__material_state$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__flutter__src__painting__edge_insets$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
+  const _js_helper = dart_sdk._js_helper;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const cloud_firestore = packages__cloud_firestore__cloud_firestore$46dart.cloud_firestore;
+  const async$ = packages__flutter__src__widgets__async$46dart.src__widgets__async;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const text_button = packages__flutter__src__material__icon_button$46dart.src__material__text_button;
+  const button_style = packages__flutter__src__material__icon_button$46dart.src__material__button_style;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const firebase_auth = packages__firebase_auth__firebase_auth$46dart.firebase_auth;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const material_state = packages__flutter__src__material__material_state$46dart.src__material__material_state;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  var commandes = Object.create(dart.library);
+  var database = Object.create(dart.library);
+  var $_get = dartx._get;
+  var $toString = dartx.toString;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    ListL: () => (T.ListL = dart.constFn(dart.legacy(core.List)))(),
+    FutureBuilderOfListL: () => (T.FutureBuilderOfListL = dart.constFn(async$.FutureBuilder$(T.ListL())))(),
+    FutureL: () => (T.FutureL = dart.constFn(dart.legacy(async.Future)))(),
+    JSArrayOfFutureL: () => (T.JSArrayOfFutureL = dart.constFn(_interceptors.JSArray$(T.FutureL())))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    FutureOfNull: () => (T.FutureOfNull = dart.constFn(async.Future$(core.Null)))(),
+    FutureLOfNull: () => (T.FutureLOfNull = dart.constFn(dart.legacy(T.FutureOfNull())))(),
+    VoidToFutureLOfNull: () => (T.VoidToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [])))(),
+    ColorL: () => (T.ColorL = dart.constFn(dart.legacy(ui.Color)))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    TextButtonL: () => (T.TextButtonL = dart.constFn(dart.legacy(text_button.TextButton)))(),
+    dynamicToTextButtonL: () => (T.dynamicToTextButtonL = dart.constFn(dart.fnType(T.TextButtonL(), [dart.dynamic])))(),
+    ListOfWidget: () => (T.ListOfWidget = dart.constFn(core.List$(framework.Widget)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    AsyncSnapshotOfListL: () => (T.AsyncSnapshotOfListL = dart.constFn(async$.AsyncSnapshot$(T.ListL())))(),
+    AsyncSnapshotLOfListL: () => (T.AsyncSnapshotLOfListL = dart.constFn(dart.legacy(T.AsyncSnapshotOfListL())))(),
+    BuildContextLAndAsyncSnapshotLOfListLToWidgetL: () => (T.BuildContextLAndAsyncSnapshotLOfListLToWidgetL = dart.constFn(dart.fnType(T.WidgetL(), [T.BuildContextL(), T.AsyncSnapshotLOfListL()])))(),
+    IdentityMapOfStringL$dynamic: () => (T.IdentityMapOfStringL$dynamic = dart.constFn(_js_helper.IdentityMap$(T.StringL(), dart.dynamic)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 25,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 31,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 29,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], T._LocationL());
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 38,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8], T._LocationL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 44,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 33,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11], T._LocationL());
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 21,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 21,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "label",
+        [_Location_column]: 21,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 21,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17], T._LocationL());
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 17,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 17,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actions",
+        [_Location_column]: 17,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 36,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 70
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 58,
+        [_Location_line]: 63,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26], T._LocationL());
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 42,
+        [_Location_line]: 63,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 35,
+        [_Location_line]: 62,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 35,
+        [_Location_line]: 63,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.constList([C[29] || CT.C29, C[30] || CT.C30], T._LocationL());
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[28] || CT.C28,
+        [_Location_name]: null,
+        [_Location_column]: 38,
+        [_Location_line]: 61,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 29,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33], T._LocationL());
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 58,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 27,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 56,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 21,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 21,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.constList([C[40] || CT.C40, C[41] || CT.C41], T._LocationL());
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[39] || CT.C39,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 53,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.constList([C[44] || CT.C44], T._LocationL());
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[43] || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 15,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 15,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.constList([C[47] || CT.C47, C[48] || CT.C48], T._LocationL());
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[46] || CT.C46,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 35,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 23,
+        [_Location_line]: 70,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51], T._LocationL());
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 70,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "future",
+        [_Location_column]: 9,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 9,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.constList([C[54] || CT.C54, C[55] || CT.C55], T._LocationL());
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[53] || CT.C53,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 25,
+        [_Location_file]: "file:///C:/Users/elman/Desktop/Entretien/PPE4/GESTCOMPPE4-GESTCOM/lib/Screens/commandes.dart"
+      });
+    }
+  }, false);
+  var C = Array(56).fill(void 0);
+  var I = [
+    "package:testflutter/Screens/commandes.dart",
+    "package:testflutter/Services/database.dart"
+  ];
+  commandes.Commandes = class Commandes extends framework.StatefulWidget {
+    createState() {
+      return new commandes._CommandesState.new();
+    }
+  };
+  (commandes.Commandes.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    commandes.Commandes.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = commandes.Commandes.prototype;
+  dart.addTypeTests(commandes.Commandes);
+  dart.addTypeCaches(commandes.Commandes);
+  dart.setMethodSignature(commandes.Commandes, () => ({
+    __proto__: dart.getMethods(commandes.Commandes.__proto__),
+    createState: dart.fnType(dart.legacy(commandes._CommandesState), [])
+  }));
+  dart.setLibraryUri(commandes.Commandes, I[0]);
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  commandes._CommandesState = class _CommandesState extends framework.State$(dart.legacy(commandes.Commandes)) {
+    commandes() {
+      return async.async(dart.dynamic, (function* commandes() {
+        return yield this.db.recupCommandes();
+      }).bind(this));
+    }
+    client() {
+      return async.async(dart.dynamic, (function* client() {
+        return yield this.db.recupClients();
+      }).bind(this));
+    }
+    build(context) {
+      return new (T.FutureBuilderOfListL()).new({future: async.Future.wait(dart.dynamic, T.JSArrayOfFutureL().of([this.commandes()])), builder: dart.fn((context, snapshot) => {
+          if (dart.test(snapshot.hasError)) {
+            return new text.Text.new("Something went wrong", {$creationLocationd_0dea112b090073317d4: C[0] || CT.C0});
+          }
+          if (snapshot.connectionState == async$.ConnectionState.done) {
+            core.print(dart.dsend(dart.dsend(dart.dload(snapshot.data[$_get](0), 'docs'), '_get', [0]), 'data', []));
+            return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("GESTCOM commandes", {$creationLocationd_0dea112b090073317d4: C[3] || CT.C3}), backgroundColor: colors.Colors.grey, actions: T.JSArrayOfWidgetL().of([new text_button._TextButtonWithIcon.new({onPressed: dart.fn(() => async.async(core.Null, function*() {
+                      yield firebase_auth.FirebaseAuth.instance.signOut();
+                    }), T.VoidToFutureLOfNull()), icon: new icon.Icon.new(icons.Icons.person, {$creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), label: new text.Text.new("Déconnexion", {$creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), style: new button_style.ButtonStyle.new({backgroundColor: material_state.MaterialStateProperty.all(T.ColorL(), colors.Colors.blueGrey)}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12})]), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), body: new basic.Center.new({child: new scroll_view.ListView.new({padding: C[23] || CT.C23, children: T.JSArrayOfWidgetL().of([new container.Container.new({padding: new edge_insets.EdgeInsets.symmetric({vertical: 5.0}), child: new basic.Column.new({children: T.ListOfWidget().as(dart.dsend(dart.dgsend(dart.dload(snapshot.data[$_get](0), 'docs'), [T.WidgetL()], 'map', [dart.fn(commande => new text_button.TextButton.new({onPressed: dart.fn(() => {
+                            }, T.VoidToNull()), child: new text.Text.new("Numéro :" + dart.notNull(T.StringL().as(dart.dload(commande, 'id'))), {$creationLocationd_0dea112b090073317d4: C[24] || CT.C24}), $creationLocationd_0dea112b090073317d4: C[27] || CT.C27}), T.dynamicToTextButtonL())]), 'toList', [])), $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34})]), $creationLocationd_0dea112b090073317d4: C[38] || CT.C38}), $creationLocationd_0dea112b090073317d4: C[42] || CT.C42}), $creationLocationd_0dea112b090073317d4: C[45] || CT.C45});
+          }
+          return new text.Text.new("Chargement...", {$creationLocationd_0dea112b090073317d4: C[49] || CT.C49});
+        }, T.BuildContextLAndAsyncSnapshotLOfListLToWidgetL()), $creationLocationd_0dea112b090073317d4: C[52] || CT.C52});
+    }
+  };
+  (commandes._CommandesState.new = function() {
+    this.firestore = cloud_firestore.FirebaseFirestore.instance;
+    this.db = new database.DataBaseService.new();
+    commandes._CommandesState.__proto__.new.call(this);
+    ;
+  }).prototype = commandes._CommandesState.prototype;
+  dart.addTypeTests(commandes._CommandesState);
+  dart.addTypeCaches(commandes._CommandesState);
+  dart.setMethodSignature(commandes._CommandesState, () => ({
+    __proto__: dart.getMethods(commandes._CommandesState.__proto__),
+    commandes: dart.fnType(dart.legacy(async.Future), []),
+    client: dart.fnType(dart.legacy(async.Future), []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(commandes._CommandesState, I[0]);
+  dart.setFieldSignature(commandes._CommandesState, () => ({
+    __proto__: dart.getFields(commandes._CommandesState.__proto__),
+    firestore: dart.finalFieldType(dart.legacy(cloud_firestore.FirebaseFirestore)),
+    db: dart.fieldType(dart.legacy(database.DataBaseService))
+  }));
+  var articles = dart.privateName(database, "DataBaseService.articles");
+  var clients = dart.privateName(database, "DataBaseService.clients");
+  var commandes$ = dart.privateName(database, "DataBaseService.commandes");
+  database.DataBaseService = class DataBaseService extends core.Object {
+    get articles() {
+      return this[articles];
+    }
+    set articles(value) {
+      super.articles = value;
+    }
+    get clients() {
+      return this[clients];
+    }
+    set clients(value) {
+      super.clients = value;
+    }
+    get commandes() {
+      return this[commandes$];
+    }
+    set commandes(value) {
+      super.commandes = value;
+    }
+    addArticle(nomart, prix, stock, fournisseur) {
+      return async.async(dart.dynamic, (function* addArticle() {
+        try {
+          yield this.articles.add(new (T.IdentityMapOfStringL$dynamic()).from(["Nom article ", nomart, "Prix HT", prix, "Stock", stock, "Fournisseur", fournisseur]));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          core.print(dart.toString(e));
+        }
+      }).bind(this));
+    }
+    getArticle() {
+      return async.async(dart.dynamic, (function* getArticle() {
+        return yield this.articles.get();
+      }).bind(this));
+    }
+    deleteArticle(id) {
+      return async.async(dart.dynamic, (function* deleteArticle() {
+        yield this.articles.doc(id).delete();
+      }).bind(this));
+    }
+    ajoutClient(nom, prenom, adresse, email) {
+      return async.async(dart.dynamic, (function* ajoutClient() {
+        return yield this.clients.add(new (T.IdentityMapOfStringL$dynamic()).from(["nom", nom, "prenom", prenom, "adresse", adresse, "email", email]));
+      }).bind(this));
+    }
+    recupClients() {
+      return async.async(dart.dynamic, (function* recupClients() {
+        return yield this.clients.get();
+      }).bind(this));
+    }
+    supprimerClient(id) {
+      return async.async(dart.dynamic, (function* supprimerClient() {
+        yield this.clients.doc(id).delete();
+      }).bind(this));
+    }
+    ajoutCommandes(idclient, articles) {
+      return async.async(dart.dynamic, (function* ajoutCommandes() {
+        try {
+          let commande = (yield this.commandes.add(new (T.IdentityMapOfStringL$dynamic()).from(["idclient", idclient])));
+          return yield this.commandes.doc(T.StringL().as(dart.dload(commande, 'id'))).collection("articles").add(new (T.IdentityMapOfStringL$dynamic()).from(["articles", articles]));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          core.print(dart.toString(e));
+        }
+      }).bind(this));
+    }
+    recupCommandes() {
+      return async.async(dart.dynamic, (function* recupCommandes() {
+        core.print("Alors cette commande apparaît!!!! ");
+        return yield this.commandes.get();
+      }).bind(this));
+    }
+    recupArticlesInCommande(id) {
+      return async.async(dart.dynamic, function* recupArticlesInCommande() {
+        return yield cloud_firestore.FirebaseFirestore.instance.collection("commandes/" + dart.str(id) + "/articles").get();
+      });
+    }
+    recupNomClientInCommande(id) {
+      return async.async(dart.dynamic, function* recupNomClientInCommande() {
+        let nomcli = (yield cloud_firestore.FirebaseFirestore.instance.collection("clients").doc(id).get());
+        return nomcli;
+      });
+    }
+    supprimerCommande(id) {
+      return async.async(dart.dynamic, (function* supprimerCommande() {
+        core.print("Ok");
+        yield this.commandes.doc(id).delete();
+      }).bind(this));
+    }
+  };
+  (database.DataBaseService.new = function() {
+    this[articles] = cloud_firestore.FirebaseFirestore.instance.collection("articles");
+    this[clients] = cloud_firestore.FirebaseFirestore.instance.collection("clients");
+    this[commandes$] = cloud_firestore.FirebaseFirestore.instance.collection("commandes");
+    ;
+  }).prototype = database.DataBaseService.prototype;
+  dart.addTypeTests(database.DataBaseService);
+  dart.addTypeCaches(database.DataBaseService);
+  dart.setMethodSignature(database.DataBaseService, () => ({
+    __proto__: dart.getMethods(database.DataBaseService.__proto__),
+    addArticle: dart.fnType(dart.legacy(async.Future), [dart.legacy(core.String), dart.legacy(core.double), dart.legacy(core.int), dart.legacy(core.String)]),
+    getArticle: dart.fnType(dart.legacy(async.Future), []),
+    deleteArticle: dart.fnType(dart.legacy(async.Future), [dart.legacy(core.String)]),
+    ajoutClient: dart.fnType(dart.legacy(async.Future), [dart.legacy(core.String), dart.legacy(core.String), dart.legacy(core.String), dart.legacy(core.String)]),
+    recupClients: dart.fnType(dart.legacy(async.Future), []),
+    supprimerClient: dart.fnType(dart.legacy(async.Future), [dart.legacy(core.String)]),
+    ajoutCommandes: dart.fnType(dart.legacy(async.Future), [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(core.Map)))]),
+    recupCommandes: dart.fnType(dart.legacy(async.Future), []),
+    recupArticlesInCommande: dart.fnType(dart.legacy(async.Future), [dart.legacy(core.String)]),
+    recupNomClientInCommande: dart.fnType(dart.legacy(async.Future), [dart.legacy(core.String)]),
+    supprimerCommande: dart.fnType(dart.legacy(async.Future), [dart.legacy(core.String)])
+  }));
+  dart.setLibraryUri(database.DataBaseService, I[1]);
+  dart.setFieldSignature(database.DataBaseService, () => ({
+    __proto__: dart.getFields(database.DataBaseService.__proto__),
+    articles: dart.finalFieldType(dart.legacy(cloud_firestore.CollectionReference)),
+    clients: dart.finalFieldType(dart.legacy(cloud_firestore.CollectionReference)),
+    commandes: dart.finalFieldType(dart.legacy(cloud_firestore.CollectionReference))
+  }));
+  dart.trackLibraries("packages/testflutter/Screens/commandes.dart", {
+    "package:testflutter/Screens/commandes.dart": commandes,
+    "package:testflutter/Services/database.dart": database
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["commandes.dart","../Services/database.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/testflutter/Screens/commandes.dart.lib.js"}');
+  // Exports:
+  return {
+    Screens__commandes: commandes,
+    Services__database: database
+  };
+}));
+
+//# sourceMappingURL=commandes.dart.lib.js.map
